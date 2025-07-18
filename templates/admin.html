@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head><title>Admin</title></head>
+<body>
+  <h2>📂 Uploaded Files</h2>
+  {% for f, link in files %}
+    <p><a href="{{ link }}">{{ f }}</a></p>
+  {% endfor %}
+  <h2>💬 Active Rooms</h2>
+  <ul>{% for r in rooms %}<li>{{ r }}</li>{% endfor %}</ul>
+</body>
+</html>

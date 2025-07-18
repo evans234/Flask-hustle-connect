@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>Room {{ room_id }}</title></head>
+<body>
+  <h3>Room: {{ room_id }} | User: {{ username }}</h3>
+  {% for user, msg in messages %}
+    <p><b>{{ user }}</b>: {{ msg }}</p>
+  {% endfor %}
+  <form method="POST">
+    <input name="message" placeholder="Type message">
+    <button type="submit">Send</button>
+  </form>
+  <form action="/upload" method="POST" enctype="multipart/form-data">
+    <input type="file" name="file" required>
+    <button type="submit">Upload File</button>
+  </form>
+  <a href="/">← Exit</a>
+</body>
+</html>
